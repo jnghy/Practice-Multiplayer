@@ -496,7 +496,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 285607371}
+      - m_Target: {fileID: 1633298574}
         m_TargetAssemblyTypeName: Com.MyCompany.MyGame.Launcher, Assembly-CSharp
         m_MethodName: Connect
         m_Mode: 1
@@ -766,7 +766,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 1
+  orthographic: 0
   orthographic size: 5
   m_Depth: -1
   m_CullingMask:

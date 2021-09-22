@@ -180,6 +180,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f4ad835e0941409e9d92a71a0eb017c, type: 3}
+--- !u!114 &253326284 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2899996362064469497, guid: 3f4ad835e0941409e9d92a71a0eb017c, type: 3}
+  m_PrefabInstance: {fileID: 253326283}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea0e6f38c21d24142802c82d444d8d34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &259815631
 GameObject:
   m_ObjectHideFlags: 0
@@ -365,6 +376,14 @@ PrefabInstance:
     - target: {fileID: 996784499754859825, guid: d55114ce672e841d9aec1efb8dcf9be6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5499623009453926540, guid: d55114ce672e841d9aec1efb8dcf9be6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 253326284}
+    - target: {fileID: 5499623009453926540, guid: d55114ce672e841d9aec1efb8dcf9be6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LeaveRoom
       objectReference: {fileID: 0}
     - target: {fileID: 6205841853295401480, guid: d55114ce672e841d9aec1efb8dcf9be6, type: 3}
       propertyPath: m_Name
@@ -1020,7 +1039,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 1
+  orthographic: 0
   orthographic size: 5
   m_Depth: -1
   m_CullingMask:

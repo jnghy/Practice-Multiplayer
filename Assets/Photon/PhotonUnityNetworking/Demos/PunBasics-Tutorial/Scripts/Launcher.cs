@@ -79,6 +79,12 @@ namespace Photon.Pun.Demo.PunBasics
 		#endregion
 
 
+
+		
+		
+		
+		
+		
 		#region Public Methods
 
 		/// <summary>

@@ -32,6 +32,8 @@ namespace Com.MyCompany.MyGame
         /// </summary>
         string gameVersion = "1";
 
+        private bool isConnecting;
+
 
         #endregion
         
@@ -66,6 +68,8 @@ namespace Com.MyCompany.MyGame
         {
             progressLabel.SetActive(true);
             controlPanel.SetActive(false);
+
+            isConnecting = true;
             
             // we check if we are connected or not, we join if we are , else we initiate the connection to the server.
             if (PhotonNetwork.IsConnected)
@@ -87,9 +91,12 @@ namespace Com.MyCompany.MyGame
 
         public override void OnConnectedToMaster()
         {
-            Debug.Log("PUN Basic Launcher: OnConnectedToMaster() was called by PUN");
-            PhotonNetwork.JoinRandomRoom();
-        }
+            if (isConnecting)
+            { 
+                Debug.Log("PUN Basic Launcher: OnConnectedToMaster() was called by PUN");
+                PhotonNetwork.JoinRandomRoom();
+            }
+         }
 
         public override void OnDisconnected(DisconnectCause cause)
         { 
@@ -97,6 +104,8 @@ namespace Com.MyCompany.MyGame
             controlPanel.SetActive(true);
             
             Debug.LogWarningFormat("PUN Basic Launcher: OnDisconnected() was called by PUN with reason {0}", cause);
+            isConnecting = false;
+
         }
 
         public override void OnJoinRandomFailed(short returnCode, string message)
@@ -109,6 +118,12 @@ namespace Com.MyCompany.MyGame
         public override void OnJoinedRoom()
         {
             Debug.Log("PUN Basics Launcher: OnJoinedRoom() called by PUN. Now this client is in a room.");
+
+            if (PhotonNetwork.CurrentRoom.PlayerCount == 1)
+            {
+                Debug.Log("We load the 'Room for 1'");
+                PhotonNetwork.LoadLevel("Room for 1");
+            }
         }
 
         #endregion
