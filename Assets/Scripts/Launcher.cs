@@ -38,8 +38,7 @@ namespace Com.MyCompany.MyGame
         #endregion
         
         #region MonoBehaviour CallBacks
-
-
+        
         void Awake()
         {
             // #Critical
